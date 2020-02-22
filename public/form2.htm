@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta charset="utf-8">
+<title>Student Registration Form</title>
+
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  var y = document.forms["myForm"]["lname"].value;
+  if (y == "") {
+    alert("Last Name must be filled out");
+    return false;
+  }
+  var z = document.getElementById("email").value;
+  if (z == "[abc]|[0-9]@[abc].[abc]") {
+    alert("Email invalid");
+    return false;
+  }
+}
+
+</script>
+ 
+</head>
+<body>
+<h2 align="center">Student Registration Form</h2>
+
+<form name="myForm" onsubmit="return validateForm()">
+
+<b align="left">First Name   </b>
+     <input type="text" id="fname" onsubmit="validateForm()" name="first_name" maxlength=20/> (max 30 characters a-z and A-Z)
+<br><br>
+<b align="center">Last Name   </b>
+     <input type="text" name="lname" maxlength=30/> (max 30 characters a-z and A-Z)
+<br><br>
+<b align="center">Email       </b>
+     <input type="text" id="email" onsubmit="validateForm()" name="email" required  maxlength=30/> (valid characters with @)
+<br><br>
+<b align="center">Mobile No.   </b>
+      <input type="text" name="m_no" required maxlength=10/> (10 digit number)
+<br><br>
+<b align="center">Gender    </b>
+Male<input type="radio" name="male" />
+Female<input type="radio" name="fmale" />
+<br><br>
+
+<input align="center" type="submit" value="Submit">
+<input align="center" type="reset" value="Reset">
+
+</form>
+
+</body>
+</html>
