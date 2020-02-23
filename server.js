@@ -6,6 +6,8 @@ const hbs=require('hbs');
  
 var app=express();
 
+var port=process.env.port || 3000;
+
 hbs.registerPartials(__dirname+"/views/partials")
 
 hbs.registerHelper("screamIt",(text)=>{
@@ -61,7 +63,7 @@ app.get('/bad',(req,res) => {
 });
 
 
-app.listen(3000,()=>
+app.listen(port,()=>
 {
-    console.log("Server is up at port 3000");
+    console.log("Server is up at port "+port);
 });
