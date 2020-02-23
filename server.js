@@ -52,6 +52,14 @@ app.get('/',(req,res) => {
 });
 
 
+app.get('/projects',(req,res) => {
+    // res.send({name:'narender', 
+    //     age:22,
+    //     like:['basketball','vollyball','cricket']});
+    res.render('project.hbs',{
+        pageTitle:'About My Projects', 
+        });
+});
 app.get('/about',(req,res) => {
     res.render('about.hbs',{
         pageTitle:"Hello this is Me",
